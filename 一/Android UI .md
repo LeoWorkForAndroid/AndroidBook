@@ -1,4 +1,4 @@
-## Android UI
+## Android Res
 
 
 ### anim
@@ -91,3 +91,21 @@
 ### xml
 
 可以在运行时通过调用 Resources.getXML() 读取的任意 XML 文件。各种 XML 配置文件（如可搜索配置）都必须保存在此处。
+
+
+
+------
+
+------
+
+## Android 布局
+
+### LinearLayout
+
+### RelativeLayout
+
+### FrameLayout
+
+### TabLayout
+
+### LinearLayout
