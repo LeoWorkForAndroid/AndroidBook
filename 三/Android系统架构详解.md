@@ -1,4 +1,4 @@
-## Android源码目录详解
+## Android系统架构详解
 
 Android的架构是分层的，非常清晰，分工很明确。
 Android本身是一套软件堆叠(Software Stack)，或称为「软件叠层架构」，
