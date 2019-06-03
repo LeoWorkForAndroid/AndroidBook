@@ -1,5 +1,8 @@
 ## Android Res
 
+[TOC]
+
+
 
 ### anim
 
@@ -123,12 +126,8 @@ TranslateAnimation moveAnimation = (TranslateAnimation) AnimationUtils.loadAnima
 view.startAnimation(moveAnimation);
 ```
 
-
-<rotate>
-
-
-
 < rotate >可以实现旋转的动画效果，主要的属性如下：
+
 * android:duration 动画从开始到结束持续的时长，单位为毫秒
 * android:fromDegrees 旋转开始的角度
 * android:toDegrees 旋转结束的角度
@@ -367,10 +366,6 @@ ObjectAnimator提供了属性的设置，但相应的需要有该属性的setter
 
 
 
-
-
-<Set>
-
 < set >标签对应于AnimatorSet类，可以将多个动画组合成一个动画集，如上面提到的在缩放宽度的同时做垂直移动，可以将一个缩放宽度的动画和一个垂直移动的动画组合在一起。
 < set >标签有一个属性可以设置动画的时序关系：
 android:ordering 设置动画的时序关系，取值可为以下两个值之一：
@@ -445,6 +440,10 @@ public void onScaleWidth(View view) {
 
 ---
 
+----
+
+
+
 ### drawable
 
 位图文件（.png、.9.png、.jpg、.gif）或编译为以下 Drawable 资源子类型的 XML 文件：
@@ -477,7 +476,9 @@ Android有很多种drawable/mipmap类型,在以前，工程目录里只有drawab
 
 
 
-<selector>
+----
+
+### selector
 
  * 可以添加一个或多个item子标签，而相应的状态是在item标签中定义的。
 
@@ -555,61 +556,68 @@ Android有很多种drawable/mipmap类型,在以前，工程目录里只有drawab
 
 
 
-<Shape>
+### shape
 
-# rectangle属性：
+- rectangle
+
     矩形，默认的形状，可以画出直角矩形、圆角矩形、弧形等
-#### solid: 设置形状填充的颜色，只有android:color一个属性
-
- * android:color 填充的颜色
-#### padding: 设置内容与形状边界的内间距，可分别设置左右上下的距离
- * android:left 左内间距
- * android:right 右内间距
- * android:top 上内间距
- * android:bottom 下内间距
-#### gradient: 设置形状的渐变颜色，可以是线性渐变、辐射渐变、扫描性渐变
- * android:type 渐变的类型
-    * linear 线性渐变，默认的渐变类型
-    * radial 放射渐变，设置该项时，android:gradientRadius也必须设置
-    * sweep 扫描性渐变
- * android:startColor 渐变开始的颜色
- * android:endColor 渐变结束的颜色
- * android:centerColor 渐变中间的颜色
- * android:angle 渐变的角度，线性渐变时才有效，必须是45的倍数，0表示从左到右，90表示从下到上
- * android:centerX 渐变中心的相对X坐标，放射渐变时才有效，在0.0到1.0之间，默认为0.5，表示在正中间
- * android:centerY 渐变中心的相对X坐标，放射渐变时才有效，在0.0到1.0之间，默认为0.5，表示在正中间
- * android:gradientRadius 渐变的半径，只有渐变类型为radial时才使用
- * android:useLevel 如果为true，则可在LevelListDrawable中使用
-#### corners:设置圆角，只适用于rectangle类型，可分别设置四个角不同半径的圆角，当设置的圆角半径很大时，比如200dp，就可变成弧形边了
- * android:radius 圆角半径，会被下面每个特定的圆角属性重写
- * android:topLeftRadius 左上角的半径
- * android:topRightRadius 右上角的半径
- * android:bottomLeftRadius 左下角的半径
- * android:bottomRightRadius 右下角的半径
-
-#### stroke:设置描边，可描成实线或虚线。
- * android:color 描边的颜色
- * android:width 描边的宽度
- * android:dashWidth 设置虚线时的横线长度
- * android:dashGap 设置虚线时的横线之间的距离
 
 
-# oval属性：
-    椭圆形，用得比较多的是画正圆
- * size: 设置形状默认的大小，可设置宽度和高度
-    * android:width 宽度
-    * android:height 高度
-# line属性：
+
+
+- solid: 设置形状填充的颜色，只有android:color一个属性
+  - android:color 填充的颜色
+
+
+
+- padding: 设置内容与形状边界的内间距，可分别设置左右上下的距离
+   - android:left 左内间距
+   - android:right 右内间距
+   - android:top 上内间距
+   - android:bottom 下内间距
+- gradient: 设置形状的渐变颜色，可以是线性渐变、辐射渐变、扫描性渐变
+   - android:type 渐变的类型
+      - linear 线性渐变，默认的渐变类型
+      - radial 放射渐变，设置该项时，android:gradientRadius也必须设置
+      - sweep 扫描性渐变
+   - android:startColor 渐变开始的颜色
+   - android:endColor 渐变结束的颜色
+   - android:centerColor 渐变中间的颜色
+   - android:angle 渐变的角度，线性渐变时才有效，必须是45的倍数，0表示从左到右，90表示从下到上
+   - android:centerX 渐变中心的相对X坐标，放射渐变时才有效，在0.0到1.0之间，默认为0.5，表示在正中间
+   - android:centerY 渐变中心的相对X坐标，放射渐变时才有效，在0.0到1.0之间，默认为0.5，表示在正中间
+   - android:gradientRadius 渐变的半径，只有渐变类型为radial时才使用
+   - android:useLevel 如果为true，则可在LevelListDrawable中使用
+- corners:设置圆角，只适用于rectangle类型，可分别设置四个角不同半径的圆角，当设置的圆角半径很大时，比如200dp，就可变成弧形边了
+   - android:radius 圆角半径，会被下面每个特定的圆角属性重写
+   - android:topLeftRadius 左上角的半径
+   - android:topRightRadius 右上角的半径
+   - android:bottomLeftRadius 左下角的半径
+   - android:bottomRightRadius 右下角的半径
+
+- stroke:设置描边，可描成实线或虚线。
+   - android:color 描边的颜色
+   - android:width 描边的宽度
+   - android:dashWidth 设置虚线时的横线长度
+   - android:dashGap 设置虚线时的横线之间的距离
+
+- oval属性：椭圆形，用得比较多的是画正圆
+   - size: 设置形状默认的大小，可设置宽度和高度
+      - android:width 宽度
+      - android:height 高度
+- line属性
+
      线形，可以画实线和虚线
-# ring属性：
-    环形，可以画环形进度条
- * android:innerRadius 内环的半径
- * android:innerRadiusRatio 浮点型，以环的宽度比率来表示内环的半径，默认为3，表示内环半径为环的宽度除以3，该值会被android:innerRadius覆盖
- * android:thickness 环的厚度
- * android:thicknessRatio 浮点型，以环的宽度比率来表示环的厚度，默认为9，表示环的厚度为环的宽度除以9，该值会被android:thickness覆盖
- * android:useLevel 一般为false，否则可能环形无法显示，只有作为LevelListDrawable使用时才设为true
 
-#### 如果想让这个环形旋转起来，变成可用的进度条，则只要在shape外层包多一个rotate元素就可以了。
+
+- ring属性:环形，可以画环形进度条
+   - android:innerRadius 内环的半径
+   - android:innerRadiusRatio 浮点型，以环的宽度比率来表示内环的半径，默认为3，表示内环半径为环的宽度除以3，该值会被android:innerRadius覆盖
+   - android:thickness 环的厚度
+   - android:thicknessRatio 浮点型，以环的宽度比率来表示环的厚度，默认为9，表示环的厚度为环的宽度除以9，该值会被android:thickness覆盖
+   - android:useLevel 一般为false，否则可能环形无法显示，只有作为LevelListDrawable使用时才设为true
+   - 如果想让这个环形旋转起来，变成可用的进度条，则只要在shape外层包多一个rotate元素就可以了。
+
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
 <rotate xmlns:android="http://schemas.android.com/apk/res/android"
@@ -629,10 +637,6 @@ Android有很多种drawable/mipmap类型,在以前，工程目录里只有drawab
 
 
 
-
-
----
-
 ### layout
 
 用于定义用户界面布局的 XML 文件
@@ -643,13 +647,7 @@ Android有很多种drawable/mipmap类型,在以前，工程目录里只有drawab
 
 用于定义应用菜单（如选项菜单、上下文菜单或子菜单）的 XML 文件
 
----
-
-## Menu篇
-
 Android系统自带的Menu很单一，但是它也支持自定义，接下来我们就来总结下Menu的用法
-
-
 
 Android的Menu样式一般定义在res/menu/文件目录下，其中有一个根元素< menu >，他们只有两个子标签：
 
@@ -682,7 +680,10 @@ Android的Menu样式一般定义在res/menu/文件目录下，其中有一个根
 
 接下来各自介绍每个标签的属性和相应的值
 
-##### group属性
+#### group属性
+
+
+
 用于设置分组
 
 - android:checkableBehavior 表示菜单项是否带复选框。该属性可设计为true或false
@@ -692,7 +693,8 @@ Android的Menu样式一般定义在res/menu/文件目录下，其中有一个根
 - android:orderInCategory 同种类菜单的排列顺序。该属性需要设置一个整数值，每个item的优先级，值越大优先级越低，actionbar地方不够就会放到overflow中
 - android:visible 菜单项默认状态是否可视，该属性可设计为true或false
 
-##### item属性
+#### item属性
+
 用于设置菜单项
 
 - android:visible 与<item>标签的同名属性含义相同。只是作用域为菜单组
@@ -719,10 +721,8 @@ Android的Menu样式一般定义在res/menu/文件目录下，其中有一个根
 - android:tooltipText
 - app:showAsAction
 
+#### Menu菜单重写
 
-#### Menu编程
-
-##### Menu菜单重写
 重写菜单需要重载以下一个方法：
 
 ```java
@@ -737,7 +737,7 @@ public boolean onCreateOptionsMenu(Menu menu) {
   return super.onCreateOptionsMenu(menu);
 }
 ```
-#### menu菜单响应
+#### Menu菜单响应
 
 ```java
  @Override
@@ -1010,21 +1010,3 @@ Android系统提供了多套主题，查看Android的frameworks/base/core/res/re
 ### xml
 
 可以在运行时通过调用 Resources.getXML() 读取的任意 XML 文件。各种 XML 配置文件（如可搜索配置）都必须保存在此处。
-
-
-
-------
-
-------
-
-## Android 布局
-
-### LinearLayout
-
-### RelativeLayout
-
-### FrameLayout
-
-### TabLayout
-
-### LinearLayout
